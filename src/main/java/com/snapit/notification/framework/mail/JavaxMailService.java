@@ -26,7 +26,7 @@ public class JavaxMailService implements MailService {
     private final Session session;
 
     @Override
-    public void sendEmail(String to, String subject, String body, FileDataSource image ) throws MessagingException {
+    public void sendEmail(String to, String subject, String body, FileDataSource image) throws MessagingException {
         MimeMessage message = new MimeMessage(session);
         message.setFrom(new InternetAddress(user));
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
