@@ -1,10 +1,12 @@
 package com.snapit.notification.application.utils;
 
+import com.snapit.notification.application.utils.exception.HTMLToStringException;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class HTMLUtilsTest {
 
@@ -30,6 +32,13 @@ class HTMLUtilsTest {
                         "</html>";
 
         assertEquals(expected, notificationBody);
+    }
+
+    @Test
+    void shouldThrowHTMLToStringException() {
+
+        assertThrows(HTMLToStringException.class, () -> HTMLUtils.readHTMLToString(new File("src")));
+
     }
 
 }
