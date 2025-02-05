@@ -1,11 +1,16 @@
 package com.snapit.notification.application.utils;
 
+import com.snapit.notification.application.utils.exception.HTMLToStringException;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class HTMLUtils {
+
+    private HTMLUtils() {
+    }
 
     public static String readHTMLToString(File file) {
         StringBuilder contentBuilder = new StringBuilder();
@@ -17,7 +22,7 @@ public class HTMLUtils {
             }
             in.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new HTMLToStringException("Failed to read HTML file as string");
         }
         return contentBuilder.toString();
     }
