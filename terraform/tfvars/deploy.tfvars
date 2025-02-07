@@ -23,8 +23,8 @@ helm_service_template = [{
     "serviceAccount.create"                         = "true"
     "serviceAccount.name"                           = "snapit-notification-svc-acc"
     "service.type"                                  = "NodePort"
-    "service.port"                                  = "28082"
-    "service.targetPort"                            = "28082"
+    "service.port"                                  = "8080"
+    "service.targetPort"                            = "8080"
     "ingress.enabled"                               = "true"
     "image.pullPolicy"                              = "Always"
     "resources.requests.cpu"                        = "100m"
@@ -50,7 +50,7 @@ helm_service_template = [{
   helm_chart_config_map = {
     "APPLICATION_NAME" = "snapit-notification"
     "API_DOCS_PATH"    = "/api-docs"
-    "API_PORT"         = "28082"
+    "API_PORT"         = "8080"
     "DATABASE_URL"     = "jdbc:postgresql://snapit-db.cq23vjwswp3a.us-east-1.rds.amazonaws.com:5432/postgres"
   }
 
