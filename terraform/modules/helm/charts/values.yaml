@@ -58,7 +58,7 @@ ingress:
   hosts:
     - host: chart-example.local
       paths:
-        - path: /
+        - path: /notification
           pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
@@ -81,7 +81,7 @@ livenessProbe:
   httpGet:
     path: /actuator/health/liveness
     port: 28082
-  initialDelaySeconds: 90
+  initialDelaySeconds: 30
   periodSeconds: 90
   failureThreshould: 2
 
@@ -95,7 +95,7 @@ readinessProbe:
 
 autoscaling:
   enabled: true
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 10
   targetCPUUtilizationPercentage: 70
   targetMemoryUtilizationPercentage: 65

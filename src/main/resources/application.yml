@@ -18,6 +18,9 @@ mail:
         user: snapit.postech@gmail.com
         password: lzwnbsaibkjycnjf
 
+server:
+    port: 28082
+
 management:
     endpoint:
         health:
