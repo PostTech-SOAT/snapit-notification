@@ -19,6 +19,8 @@ mail:
         password: lzwnbsaibkjycnjf
 
 management:
+    server:
+        port: 28082
     endpoint:
         health:
             probes:
