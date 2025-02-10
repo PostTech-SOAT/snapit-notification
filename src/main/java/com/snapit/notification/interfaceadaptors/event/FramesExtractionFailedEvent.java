@@ -1,12 +1,10 @@
 package com.snapit.notification.interfaceadaptors.event;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.io.Serializable;
 
-@Getter
-@Setter
+@Data
 public class FramesExtractionFailedEvent implements Serializable {
 
     private String filename;
