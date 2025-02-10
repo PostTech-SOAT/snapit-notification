@@ -3,10 +3,10 @@ spring:
         name: snapit-notification
 
     rabbitmq:
-        host: localhost
+        host: abc666f7747244c7f82dace641f73e29-1183275588.us-east-1.elb.amazonaws.com
         port: 5672
-        username: guest
-        password: guest
+        username: hexqueue
+        password: 1xo4r9VIU4ARLW3f
 
 mail:
     smtp:
@@ -17,3 +17,16 @@ mail:
     authentication:
         user: snapit.postech@gmail.com
         password: lzwnbsaibkjycnjf
+
+management:
+    server:
+        port: 28082
+    endpoint:
+        health:
+            probes:
+                enabled: true
+    health:
+        livenessstate:
+            enabled: true
+        readinessstate:
+            enabled: true
