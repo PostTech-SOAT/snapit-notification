@@ -37,12 +37,6 @@ jobs:
 
       - name: Publish to ECR
         uses: PostTech-SOAT/snapit-actions/.github/publish@main
-        with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_session_token: ${{ secrets.AWS_SESSION_TOKEN }}
-          aws_region: ${{ env.aws_region }}
-          aws_account_id: ${{ secrets.AWS_ACCOUNT_ID }}
 
   terraform_plan:
     needs: publish_ecr
@@ -57,10 +51,6 @@ jobs:
           terraform_version: ${{ env.terraform_version }}
           terraform_directory: ${{ env.terraform_directory }}
           pr_number: ${{ env.pr_number }}
-          aws_region: ${{ env.aws_region }}
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_session_token: ${{ secrets.AWS_SESSION_TOKEN }}
           github_token: ${{ secrets.MY_GITHUB_TOKEN }}
           terragrunt_version: ${{ env.terragrunt_version }}
           tfvars_file_name: ${{ env.tfvars_file_name }}
